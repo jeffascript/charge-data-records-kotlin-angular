@@ -1,0 +1,20 @@
+.header__container {
+  background: var(--background-paper);
+}
+
+.header__server-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+}
+
+button {
+  background-color: var(--background-paper) !important;
+  color: var(--light) !important;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: var(--grayish) !important;
+}

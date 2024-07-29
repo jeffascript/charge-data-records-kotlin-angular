@@ -1,0 +1,18 @@
+.signup__header {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+button,
+mat-raised-button {
+  background-color: var(--background-paper) !important;
+  color: var(--light) !important;
+}
+
+button:disabled,
+mat-raised-button,
+button[disabled],
+mat-raised-button {
+  background-color: var(--grayish) !important;
+}

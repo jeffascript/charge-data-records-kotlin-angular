@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="header__container">
+    <span>E-Mobility Charging Platform</span>
+    <span class="spacer"></span>
+
+
+
+    <ng-container *ngIf="isLoggedIn()">
+        <span>Welcome, {{username()}}</span>
+        <button mat-button (click)="logout()">Logout</button>
+
+    </ng-container>
+    <ng-container *ngIf="!isLoggedIn()">
+        <button mat-button routerLink="/login">Login</button>
+        <button mat-button routerLink="/register">Register</button>
+    </ng-container>
+
+
+
+</mat-toolbar>
+<div class="header__server-status">
+    <span>Backend: &nbsp; </span>
+    <span [ngClass]="{'online': isServerAlive(), 'offline': !isServerAlive()}">
+        {{ isServerAlive() ? ' ✅ Online and Connected' : ' ❌ Not Connected' }}
+    </span>
+</div>

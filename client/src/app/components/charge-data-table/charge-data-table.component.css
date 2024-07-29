@@ -1,0 +1,43 @@
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+}
+
+.data__container {
+  display: grid;
+  grid-template-columns: 3fr auto;
+
+  gap: 0 2rem;
+  padding: 2.5rem;
+}
+
+.data__table {
+  grid-columns: 2fr;
+}
+
+.data__form {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+mat-paginator ~ .mat-mdc-tooltip-trigger {
+  background-color: red !important;
+}
+
+@media (max-width: 760px) {
+  .data__container {
+    display: grid;
+    width: 100vw;
+    grid-auto-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+  }
+  .data__table {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .data__form {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+}

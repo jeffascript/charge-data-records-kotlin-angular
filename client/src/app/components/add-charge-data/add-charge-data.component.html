@@ -1,0 +1,32 @@
+<mat-card>
+    <p>Hello Admin: {{authService.currentUserValue?.username}}</p>
+    <mat-card-header>
+
+        <mat-card-title>Add Charge Data Record</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="chargeDataForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <input matInput placeholder="Charging Session ID" formControlName="chargingSessionId">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Vehicle ID" formControlName="vehicleId">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="datetime-local" placeholder="Start Time" formControlName="startTime">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="datetime-local" placeholder="End Time" formControlName="endTime">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="number" placeholder="Total Cost" formControlName="totalCost">
+            </mat-form-field>
+            <div>
+                <button mat-raised-button color="primary" type="submit"
+                    [disabled]="chargeDataForm.invalid || chargeDataState.loading()">Add Record</button>
+            </div>
+        </form>
+    </mat-card-content>
+
+    <mat-error *ngIf="error">{{error}}</mat-error>
+</mat-card>
